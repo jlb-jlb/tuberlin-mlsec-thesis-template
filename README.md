@@ -1,4 +1,4 @@
-# TU Berlin MLSec thesis template
+# Unofficial TU Berlin MLSec thesis template
 
 <p align="left">
   <img src="docs/tu-berlin-logo.png" alt="Technische Universität Berlin" height="46">
@@ -6,13 +6,17 @@
   <img src="docs/mlsec-logo.png" alt="Chair of Machine Learning and Security" height="46">
 </p>
 
-A working LaTeX thesis for the Chair of Machine Learning and Security at TU
-Berlin. Every chapter is filled with placeholder text that exercises one part of
-the layout, so the build shows what the template can do before you write a word.
-Based on the PSI chair thesis template (`PSIThesis.cls`, LPPL), adapted for TU
-Berlin: title page, the German declaration the examination office prescribes, a
-German abstract beside the English one, a wide margin column, and wide floats
-that span text and margin.
+An unofficial LaTeX thesis template for the Chair of Machine Learning and
+Security at TU Berlin, written by a student and neither issued nor endorsed by the
+chair or the university. Check the current formal requirements with the
+examination office before you submit.
+
+Every chapter is filled with placeholder text that exercises one part of the
+layout, so the build shows what the template can do before you write a word. Based
+on the PSI chair thesis template (`PSIThesis.cls`, LPPL), adapted for TU Berlin:
+title page, the German declaration the examination office prescribes, a German
+abstract beside the English one, a wide margin column, and wide floats that span
+text and margin.
 
 ```bash
 make            # lualatex, biber, two more passes
