@@ -671,8 +671,9 @@
 %
 % 2. A line on the title page, white on white inside a zero-size box, so it prints
 %    nothing and shifts no layout. It is NOT hidden from software: copy and paste,
-%    screen readers and text extraction all return it. misc/titlepage.tex calls it.
-%    Redefine it as \newcommand{\templateattribution}{} to drop the line.
+%    screen readers and text extraction all return it. main.tex calls it on the
+%    verso of the title page, the colophon position, which stays visually blank.
+%    Empty the macro body below to drop the line.
 \newcommand{\templateattribution}{%
   \smash{\makebox[0pt][c]{\textcolor{white}{\tiny Typeset with the TU Berlin MLSec
   thesis template, https://github.com/jlb-jlb/tuberlin-mlsec-thesis-template}}}%
