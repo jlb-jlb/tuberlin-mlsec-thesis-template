@@ -1,0 +1,62 @@
+\chapter{Dataset and Corpus Engineering}
+\label{chap:dataset}
+
+% A data chapter belongs before the methodology whenever the thesis builds its own
+% corpus: the methodology can then refer to the data instead of describing it.
+\Cref{sec:data-corpus} describes where the samples come from and how they are labelled, \Cref{sec:data-pipeline} the pipeline that turns them into the representation the models read, and \Cref{sec:data-stats} reports what the corpus contains.
+
+\section{The Corpus}
+\label{sec:data-corpus}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua~\cite{example_Website_2026}.
+State where each sample comes from, how it was labelled, and which decisions a later chapter depends on.
+
+\begin{margintable}
+  \centering
+  \caption[Corpus composition]{What the corpus holds, per class.}
+  \label{tab:data-corpus}
+  \small
+  \begin{tabular}{@{}lr@{}}
+    \toprule
+    Class & Samples \\
+    \midrule
+    negative & 502 \\
+    positive & 213 \\
+    \midrule
+    total & 715 \\
+    \bottomrule
+  \end{tabular}
+\end{margintable}
+
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat (\Cref{tab:data-corpus}).
+% Source: name the query, script, or export that produced every number above.
+
+\section{From Raw Data to the Model's Input}
+\label{sec:data-pipeline}
+
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[x=1mm, y=1mm, font=\small,
+    stage/.style={draw=figboxdraw, fill=figbox, rounded corners=1mm, minimum height=9mm, inner sep=2mm},
+    arr/.style={-{Latex[length=2mm]}, figline}]
+    \node[stage] (raw) at (0,0)   {raw sample};
+    \node[stage] (ext) at (33,0)  {extraction};
+    \node[stage] (rep) at (66,0)  {representation};
+    \node[stage, draw=figaccent, fill=figaccentbg] (db) at (102,0) {database};
+    \draw[arr] (raw) -- (ext);
+    \draw[arr] (ext) -- (rep);
+    \draw[arr] (rep) -- (db);
+  \end{tikzpicture}
+  \caption[The corpus pipeline]{The pipeline from a raw sample to the stored representation. The accent colour marks the artifact the later chapters read from.}
+  \label{fig:data-pipeline}
+\end{figure}
+
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum (\Cref{fig:data-pipeline}).
+
+\section{What the Corpus Contains}
+\label{sec:data-stats}
+
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam.
+Report the counts a reader needs to judge the results, and give every one of them a source comment.

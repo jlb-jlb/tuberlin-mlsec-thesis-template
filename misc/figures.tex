@@ -1,0 +1,35 @@
+% Shared figure styling for TikZ diagrams.
+% Colours reuse the TU Berlin palette defined in setup.tex (ubblue = TU red = #C50E1F,
+% ubblue20 = light red tint, ubred, ...). Mirrors src/reporting/thesis_style.py so the
+% hand-drawn diagrams and the matplotlib plots share one look:
+%   TU red  -> emphasis / the key element        (fig accent)
+%   grey    -> neutral structure and connectors
+% Keep the two files in sync if the palette changes.
+
+\colorlet{figaccent}{ubred}        % TU red — emphasis / highlighted element
+\colorlet{figaccentbg}{ubblue20}   % light red tint — highlighted box fill
+\colorlet{figbox}{black!5}         % neutral structural box fill
+\colorlet{figboxdraw}{black!35}    % neutral box border
+\colorlet{figline}{black!55}       % neutral connectors
+\colorlet{figink}{black!85}        % neutral emphasised connector / text
+\definecolor{figteal}{HTML}{11706B} % muted teal — secondary series against the TU-red fills
+
+\tikzset{
+  fig/tbl/.style      = {draw=figboxdraw, rounded corners, align=left, fill=figbox,
+                         inner sep=4pt, text width=3.0cm, font=\footnotesize},
+  fig/stage/.style    = {draw=figboxdraw, rounded corners, align=center, fill=figbox,
+                         inner sep=4pt, minimum height=12mm, text width=2.15cm,
+                         font=\footnotesize},
+  fig/hub/.style      = {draw=figaccent, rounded corners, align=center, fill=figaccentbg,
+                         inner sep=4pt, minimum height=13mm, text width=2.35cm,
+                         font=\footnotesize},
+  fig/fk/.style       = {-{Latex[length=1.6mm]}, figline, shorten >=1pt, shorten <=1pt},
+  fig/flow/.style     = {-{Latex[length=2mm]}, thick, figink},
+  fig/dedup/.style    = {-{Latex[length=1.8mm]}, thick, figaccent},   % the collapse (TU red)
+  fig/drop/.style     = {-{Latex[length=1.4mm]}, figaccent, dashed},  % dropped edges (TU red)
+  fig/node/.style     = {circle, draw, thick, fill=black!6, minimum size=9mm,
+                         font=\small\bfseries},
+  fig/cls/.style      = {rounded corners, draw=figboxdraw, fill=black!4, inner sep=6pt},
+  fig/clslabel/.style = {font=\scriptsize\bfseries, color=figink},
+  fig/group/.style    = {draw=figline, dashed, rounded corners, inner sep=9pt},
+}

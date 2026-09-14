@@ -1,0 +1,34 @@
+% The "Appendix" label in the table of contents is written here, at the top of the
+% FIRST appendix. A write issued between two \include's migrates into the next
+% include's .aux and would land in the .toc after Appendix A's entry.
+\addtocontents{toc}{\protect\vspace{1em}}
+\addtocontents{toc}{\noindent\textbf{Appendix}\protect\vspace{0.5em}}
+
+\chapter{Reproducibility}
+\label{app:first}
+
+The appendices run at full width: the margin column is folded into the text block
+after \verb|\appendix|, so tables and listings get 164.6\,mm instead of 115\,mm.
+A wide table is therefore unnecessary here, and a normal table already spans the block.
+
+\section{Configuration}
+\label{app:first-config}
+
+\begin{table}[htbp]
+  \centering
+  \small
+  \caption[A full-width appendix table]{An appendix table. It uses the full 164.6\,mm, which is why the appendices carry no margin elements.}
+  \label{tab:app-config}
+  \begin{tabular}{@{}l p{6cm} p{5cm}@{}}
+    \toprule
+    Field & Value & Note \\
+    \midrule
+    Model & the model identifier & as published \\
+    Revision & the commit of the model repository & pin it, tags move \\
+    Precision & bfloat16, no quantization & \\
+    Seeds & 42, 43, 44 & three per configuration \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\Cref{tab:app-config} prints as "Table A.1", and \Cref{app:first-config} prints as "Appendix A.1", because \verb|\crefalias| is set after \verb|\appendix|.

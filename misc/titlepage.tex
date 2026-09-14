@@ -1,0 +1,82 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% File: titlepage.tex
+% 
+% This file is part of the PSIThesis.cls
+% LaTeX documentclass
+% 
+% The code in this file is made available
+% under the following license:
+%
+% LPPL v1.3c (http://www.latex-project.org/lppl)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\pagestyle{plain} % Default to the plain heading style until the thesis style is called for the body content
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+
+\newgeometry{
+	inner=4cm, % Inner margin
+	outer=4cm, % Outer margin
+	marginparwidth=0cm,
+	marginparsep=0mm,
+	bindingoffset=.5cm, % Binding offset
+	top=2.5cm, % Top margin
+	bottom=2.5cm, % Bottom margin
+	% showframe % Uncomment to show how the type block is set on the page
+}
+
+\noindent
+\includegraphics[height=14mm]{misc/mlsec-logo-red3.pdf}%
+\hfill
+\includegraphics[height=14mm]{misc/tub-logo.pdf}
+
+\begin{center}
+
+\vspace*{.08\textheight}
+
+{\LARGE \textls[130]{\MakeUppercase{\univname}}\par}\vspace{1.5\baselineskip} % University name
+
+{\large \facname\par}
+\vspace{0.5\baselineskip}
+{\large \groupname\par}
+
+\vspace{1.5cm}
+
+\textsc{\Large Master's Thesis}\\[1cm]
+
+%\HRule \\[0.4cm] % Horizontal line
+%
+{\huge \bfseries \thesistitledisplay\par}\vspace{1cm} % Thesis title
+
+%\HRule \\[1.5cm] % Horizontal line
+
+\textsc{\Large by}\\[0.75cm]
+
+{\Large \authorname}\\[0.25cm]
+{\large Student ID: \studentid}
+
+\vspace{1.5cm}
+
+\begin{tabular}{@{}rl@{}}
+First examiner: & \examname\\
+Second examiner: & \secondexaminer\\
+Supervisor: & \supname\\
+\end{tabular}
+
+\vfill
+
+{\large \tdate} % Date
+
+\vfill
+\end{center}
+
+\restoregeometry
+
+\end{titlepage}

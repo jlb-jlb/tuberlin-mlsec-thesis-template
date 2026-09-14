@@ -1,0 +1,116 @@
+\chapter{Methodology}
+\label{chap:methodology}
+
+This chapter shows a full-width figure, a normal table, and a code listing.
+
+\section{Task and Protocol}
+\label{sec:method-protocol}
+
+Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat quo voluptas nulla pariatur.
+Scores are reported as macro F1 and recall, with the \ac{aucroc} as context.
+
+\begin{figure}[htbp]
+  \centering
+  \begin{tikzpicture}[x=1mm, y=1mm, font=\small,
+    box/.style={draw=figboxdraw, fill=figbox, rounded corners=1mm, minimum height=9mm, inner sep=2mm},
+    arr/.style={-{Latex[length=2mm]}, figboxdraw}]
+    \node[box] (a) at (0,0)  {input};
+    \node[box] (b) at (30,0) {model};
+    \node[box] (c) at (60,0) {output};
+    \draw[arr] (a) -- (b);
+    \draw[arr] (b) -- (c);
+  \end{tikzpicture}
+  \caption[A figure in the text block]{A figure at text width. Draw figures with TikZ so they inherit the thesis fonts and colours, which keeps them sharp at any zoom.}
+  \label{fig:method-pipeline}
+\end{figure}
+
+Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur (\Cref{fig:method-pipeline}).
+
+\section{Models and Training}
+\label{sec:method-models}
+
+\begin{table}[htbp]
+  \centering
+  \caption[A table in the text block]{A normal table. Keep headers as plain text, since an acronym macro would render them as a coloured link.}
+  \label{tab:method-config}
+  \small
+  \begin{tabular}{@{}lr@{}}
+    \toprule
+    Setting & Value \\
+    \midrule
+    Hidden width & 256 \\
+    Layers & 4 \\
+    Learning rate & $10^{-3}$ \\
+    Seeds & 42, 43, 44 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+The configuration of \Cref{tab:method-config} stays fixed across the experiments, so the rows of \Cref{chap:results} differ in one factor at a time.
+
+\section{Implementation}
+\label{sec:method-implementation}
+
+A listing sets in the monospace font of the template:
+
+\begin{lstlisting}[language=Python, caption={[A code listing]A code listing, numbered and referenced like a figure.}, label=lst:method-example]
+def predict(graph, model):
+    logits = model(graph.x, graph.edge_index)
+    return logits.softmax(dim=1)[:, 1]
+\end{lstlisting}
+
+\Cref{lst:method-example} shows the call, and \code{predict} in the text uses the inline command.
+
+\section{Use of Generative AI Tools}
+\label{sec:method-ai-use}
+
+% The declaration on the first page points here. The examination office requires the
+% product name, the manufacturer, the version, and the purpose of every generative AI
+% tool used. Name them in prose and keep the list current.
+Generative AI tools were used throughout this thesis and are named here with their purposes.
+% Decorative margin illustration (2026-09-08): a robot in the thesis figure palette, no caption
+% and no label so it stays out of the list of figures. Units are millimetres, the drawing is
+% drawn at 40 mm width and scaled to 60 percent, 24 mm, inside the 41.4 mm margin column.
+\begin{marginfigure}
+  \centering
+  \begin{tikzpicture}[x=0.6mm, y=0.6mm, line join=round,
+    part/.style={draw=figboxdraw, fill=figbox, rounded corners=0.7mm},
+    joint/.style={draw=figboxdraw, fill=figboxdraw, rounded corners=0.35mm},
+    limb/.style={line width=1.6mm, figboxdraw, line cap=round}]
+    % legs and feet
+    \foreach \x in {-6, 6} {
+      \draw[joint] (\x-2.2,3) rectangle (\x+2.2,8);
+      \draw[part] (\x-4,0) rectangle (\x+4,3);
+    }
+    % arms: left hanging, right raised
+    \draw[limb] (-13,23) -- (-17,13);
+    \draw[limb] (13,23) -- (18,31);
+    % body with a screen showing lines of text and a cursor
+    \draw[part] (-12,7) rectangle (12,27);
+    \draw[draw=figboxdraw, fill=white, rounded corners=0.5mm] (-8,12) rectangle (8,23);
+    \foreach \y/\len in {20/10, 17.5/7, 15/5} {
+      \draw[figline, line width=0.5mm, line cap=round] (-6,\y) -- (-6+\len,\y);
+    }
+    \fill[figaccent] (0,14.1) rectangle (1.6,15.9);
+    % hands
+    \draw[part] (-17,12) circle (2.4);
+    \draw[part] (18.4,31.8) circle (2.4);
+    % neck, head, ears
+    \draw[joint] (-3,27) rectangle (3,30.5);
+    \draw[part] (-11,30) rectangle (11,46);
+    \draw[joint] (-13,35) rectangle (-11,41);
+    \draw[joint] (11,35) rectangle (13,41);
+    % eyes with highlights, smile
+    \foreach \x in {-4.5, 4.5} {
+      \fill[figink] (\x,39) circle (2);
+      \fill[white] (\x+0.7,39.7) circle (0.6);
+    }
+    \draw[figink, line width=0.3mm, line cap=round] (-3.4,35) arc[start angle=-150, end angle=-30, radius=4];
+    % antenna with a red tip
+    \draw[figboxdraw, line width=0.36mm] (0,46) -- (0,51);
+    \fill[figaccent] (0,52.2) circle (1.6);
+  \end{tikzpicture}
+\end{marginfigure}
+The large language models that are the object of study are documented with their versions in \Cref{sec:method-models} and are not meant here.
+Name each tool with its product name, its manufacturer, the version you used, and what you used it for, for example writing assistance, language editing, literature search, or code.
+Every design decision, every interpretation, and the final wording of every passage are my own, and I take full responsibility for the selection, adoption, and all results of the AI-generated output.

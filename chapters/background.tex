@@ -1,0 +1,44 @@
+\chapter{Background and Related Work}
+\label{chap:background}
+
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti.
+This chapter shows the citation styles, a margin figure, and an equation.
+
+\section{Foundations}
+\label{sec:bg-foundations}
+
+Et harum quidem rerum facilis est et expedita distinctio, nam libero tempore, cum soluta nobis est eligendi optio.
+
+\begin{marginfigure}
+  \centering
+  \begin{tikzpicture}[x=6mm, y=6mm, line join=round]
+    \fill[ubblue20] (0,0) rectangle (3,1.2);
+    \fill[ubred!30] (0,1.2) rectangle (3,2.1);
+    \draw[gray50] (0,0) rectangle (3,2.1);
+    \node[font=\scriptsize] at (1.5,0.6) {feature};
+    \node[font=\scriptsize] at (1.5,1.65) {label};
+  \end{tikzpicture}
+  \caption[A figure in the margin]{A margin figure, drawn with TikZ so it inherits the thesis colours. It is centred on the line that introduces it.}
+  \label{fig:bg-margin}
+\end{marginfigure}
+
+Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae (\Cref{fig:bg-margin}).
+An inline equation such as \(f(x) = \sigma(Wx + b)\) sets in the text, whereas a numbered one stands on its own:
+
+\begin{equation}
+  \label{eq:bg-sigmoid}
+  \sigma(z) = \frac{1}{1 + e^{-z}}, \qquad z \in \mathbb{R}.
+\end{equation}
+
+\Cref{eq:bg-sigmoid} is referenced the same way as everything else.
+
+\section{Related Work}
+\label{sec:bg-related}
+
+Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat~\cite{example_Preprint_2025,example_Website_2026}.
+Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus~\cite{example_ConferencePaper_2024}.
+
+\section{Research Gap}
+\label{sec:bg-gap}
+
+Omnis voluptas assumenda est, omnis dolor repellendus, and the gap this thesis addresses follows from the two paragraphs above.

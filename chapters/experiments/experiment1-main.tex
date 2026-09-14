@@ -1,0 +1,48 @@
+\section{Main Result}
+\label{sec:exp-main}
+
+\paragraph{The proposed feature transfers, the baseline does not.}
+Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est (\Cref{tab:exp-headline}).
+Both fold sets are reported side by side, so a single one cannot carry a claim on its own.
+
+\begin{widetable}[tb]
+  \footnotesize
+  \setlength{\tabcolsep}{4pt}
+  \caption[A wide table spanning text and margin]{A wide table. It spans the text block and the margin column, which fits a header of ten numeric columns; a normal table would not.}
+  \label{tab:exp-headline}
+  \begin{tabular}{lrrrrrrrrrr}
+    \toprule
+    & \multicolumn{5}{c}{big-3} & \multicolumn{5}{c}{all-6} \\
+    \cmidrule(lr){2-6} \cmidrule(lr){7-11}
+    Feature & F1 & AUC-ROC & AUC-PR & Prec & Rec & F1 & AUC-ROC & AUC-PR & Prec & Rec \\
+    \midrule
+    baseline  & 0.501 & 0.734 & 0.755 & 0.772 & 0.206 & 0.589 & 0.741 & 0.784 & 0.664 & 0.355 \\
+    control   & 0.630 & 0.627 & 0.640 & 0.610 & 0.453 & 0.631 & 0.631 & 0.650 & 0.620 & 0.509 \\
+    proposed  & 0.909 & 0.940 & 0.960 & 0.975 & 0.847 & 0.906 & 0.959 & 0.971 & 0.912 & 0.868 \\
+    \bottomrule
+  \end{tabular}
+\end{widetable}
+% Source: every number in a table gets a comment naming the run or the file it came
+%   from, so a later reader can re-derive it without guessing.
+
+At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint.
+
+\begin{widefigure}[tb]
+  \centering
+  \begin{tikzpicture}[x=1mm, y=1mm, font=\small]
+    \draw[figline] (0,0) rectangle (150,28);
+    \foreach \x/\v in {15/0.50, 45/0.63, 75/0.91, 105/0.94, 135/0.96} {
+      \fill[figaccent] (\x-5,2) rectangle (\x+5,{2+24*\v});
+      \node[font=\scriptsize, anchor=south] at (\x,{3+24*\v}) {\v};
+    }
+  \end{tikzpicture}
+  \caption[A wide figure spanning text and margin]{A wide figure, the same width as a wide table. Use it when a plot needs the extra 41.4\,mm.}
+  \label{fig:exp-wide}
+\end{widefigure}
+
+\Cref{fig:exp-wide} carries the same comparison as a plot.
+
+\subsection{Reading}
+\label{sec:exp-main-reading}
+
+Itaque earum rerum hic tenetur a sapiente delectus, and the closing paragraph of a section states what the numbers above support without repeating them.

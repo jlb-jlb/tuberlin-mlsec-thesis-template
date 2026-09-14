@@ -1,0 +1,12 @@
+\chapter{Experiments and Results}
+\label{chap:results}
+
+% Chapter opening only. The sections live in chapters/experiments/, one file per
+% experiment, so a long chapter stays navigable and each section can be compiled
+% alone. See the comment beside the \include lines in main.tex for how they are
+% wired in, and why the first one is \input here rather than \include'd.
+\Cref{sec:exp-main} reports the main comparison under both fold sets, and \Cref{sec:exp-ablation} removes one component at a time.
+
+% \input, not \include: \include would force a page break and leave this opening
+% alone on its own page. Every later section file is \include'd from main.tex.
+\input{chapters/experiments/experiment1-main}

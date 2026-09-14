@@ -1,0 +1,22 @@
+\chapter{Prompts and Listings}
+\label{app:second}
+
+Long verbatim material belongs in an appendix, where the full width keeps lines
+from wrapping.
+
+\section{A Prompt}
+\label{app:second-prompt}
+
+\begin{lstlisting}[caption={[A verbatim prompt]A prompt, set verbatim so that every character is the one that was sent.}, label=lst:app-prompt]
+You are given the source of one class.
+Answer with JSON only, using this schema:
+  {"malicious": true|false, "reason": "<one sentence>"}
+Judge the code, not the class name.
+\end{lstlisting}
+
+\section{An Output}
+\label{app:second-output}
+
+\begin{lstlisting}[caption={[A verbatim output]The model's answer to the prompt of \Cref{lst:app-prompt}.}, label=lst:app-output]
+{"malicious": false, "reason": "Reads a bundled asset and decodes it."}
+\end{lstlisting}

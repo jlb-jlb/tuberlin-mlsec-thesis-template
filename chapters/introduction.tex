@@ -1,0 +1,58 @@
+\chapter{Introduction}
+\label{chap:introduction}
+
+% One sentence per line keeps diffs readable and makes a sentence easy to move.
+Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+A citation looks like this~\cite{example_JournalArticle_2023}, and a citation with the author in the sentence reads \textcite{example_ConferencePaper_2024} instead.
+Acronyms expand on first use, so an \ac{llm} prints in full here and as \ac{llm} from the second use on.
+Cross-references go through cleveref, which supplies the word: \Cref{chap:background} is a chapter, \Cref{sec:method-protocol} a section, \Cref{tab:intro-example} a table.
+
+\section{Motivation}
+\label{sec:motivation}
+
+Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+
+\begin{margintable}
+  \centering
+  \caption[A table in the margin]{A margin table. It sits in the 41.4\,mm margin column, so keep it to three or four narrow columns.}
+  \label{tab:intro-example}
+  \small
+  \begin{tabular}{@{}lrr@{}}
+    \toprule
+    Variant & F1 & Rec \\
+    \midrule
+    baseline & 0.501 & 0.206 \\
+    proposed & 0.909 & 0.847 \\
+    \bottomrule
+  \end{tabular}
+\end{margintable}
+
+Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium.\sidenote{A sidenote lands in the margin beside the line that calls it, numbered like a footnote.}
+Totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
+
+\section{Research Question}
+\label{sec:research-question}
+
+Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+
+\begin{quote}
+  How does one phrase a research question so that an experiment can answer it?
+\end{quote}
+
+Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit.
+
+\section{Contributions}
+\label{sec:contributions}
+
+\begin{enumerate}
+  \item \textbf{The first contribution.} Sed quia non numquam eius modi tempora incidunt ut labore et dolore magnam aliquam quaerat voluptatem (\Cref{chap:methodology}).
+  \item \textbf{The second contribution.} Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam (\Cref{chap:results}).
+  \item \textbf{The third contribution.} Quis autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae consequatur (\Cref{app:first}).
+\end{enumerate}
+
+\section{Thesis Outline}
+\label{sec:thesis-outline}
+
+\Cref{chap:background} reviews the literature, \Cref{chap:dataset} describes the corpus, \Cref{chap:methodology} defines the task and the evaluation protocol, \Cref{chap:results} reports the experiments, \Cref{chap:discussion} interprets them, and \Cref{chap:conclusion} closes with the findings and the open questions.

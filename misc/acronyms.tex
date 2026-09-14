@@ -1,0 +1,24 @@
+% Acronyms. \ac{key} expands on first use and abbreviates afterwards, \acp{key}
+% pluralizes, \acs{key} forces the short form, \acf{key} forces the full one.
+% A starred form (\acs*{key}) does not count as a use, which matters because
+% acro's single=true option prints a once-used acronym in long form only.
+
+\DeclareAcronym{gnn}{
+  short = GNN,
+  long = Graph Neural Network
+}
+
+\DeclareAcronym{llm}{
+  short = LLM,
+  long = Large Language Model
+}
+
+\DeclareAcronym{roc}{
+  short = ROC,
+  long = Receiver Operating Characteristic
+}
+
+\DeclareAcronym{aucroc}{
+  short = AUC-ROC,
+  long = Area Under the ROC Curve % ROC has its own entry and is used standalone
+}

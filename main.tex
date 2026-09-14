@@ -1,0 +1,384 @@
+% !TeX program = lualatex
+% !TeX TS-program = lualatex
+% !BIB program = biber
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%
+% PSI Chair Thesis Template
+% Version 20200913
+%
+% based on MastersDoctoralThesis.cls
+% Version 2.5 (27/8/17)
+%
+% which was obtained from:
+% http://www.LaTeXTemplates.com
+%
+% Version 2.x major modifications by:
+% Vel (vel@latextemplates.com)
+%
+% This template is based on a template by:
+% Steve Gunn (http://users.ecs.soton.ac.uk/srg/softwaretools/document/templates/)
+% Sunil Patel (http://www.sunilpatel.co.uk/thesis-template/)
+%
+% License of this guide and the template
+% CC BY-SA 4.0 (http://creativecommons.org/licenses/by-sa/4.0/)
+%
+% Exception 1: Some excerpts, figures, and tables that have been taken
+% from the literature (denoted with a citation in the caption) are not
+% covered by the above license. Permission to re-use and distribute
+% these excerpts, figures, and tables must be obtained from the
+% respective holder of the copyrights.
+%
+% Exception 2: Chapter 1 and Appendix C are based on content from the
+% MastersDoctoralThesis template mentioned above, which is licensed under
+% CC BY-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+% License of the PSIThesis.cls class file:
+% LPPL v1.3c (http://www.latex-project.org/lppl)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\PassOptionsToPackage{ngerman,american}{babel} 
+\documentclass[
+11pt, % The default document font size is 11 (recommended), options: 10pt, 11pt, 12pt
+%oneside, % Two-side layout is recommended; uncomment to switch to one-sided
+american, % American English (US spelling). Replace with ngerman for German; not fully supported so far -- requires changes elsewhere
+singlespacing, % Single line spacing (recommended), alternatives: onehalfspacing or doublespacing
+%draft, % Uncomment to enable draft mode (no pictures, no links, overfull hboxes indicated)
+%nolistspacing, % If the document is onehalfspacing or doublespacing, uncomment this to set spacing in lists to single
+liststotoc, % Adds list of figures/tables/etc to table of contents (not recommended)
+%toctotoc, % Uncomment to add the main table of contents to the table of contents (not recommended)
+parskip, % add space between paragraphs (recommended)
+nohyperref, % do not load the hyperref package (is loaded in setup.tex)
+%headsepline, % print a horizontal line under the page header
+consistentlayout, % layout of declaration, abstract and acknowledgements pages matches the default layout
+%final, % Uncomment to hide all todo notes
+]{PSIThesis} % The class file specifying the document structure
+% version of the guide
+\def\tversion{v20200913}
+
+% long-term stable URL to the thesis guide
+\def\doiurl{https://doi.org/10.20378/irb-48428}
+\def\githuburl{https://github.com/UBA-PSI/psi-thesis-guide}
+
+\input{misc/setup.tex} % Load the settings from Misc/setup.tex
+\input{misc/commands.tex} % Load the custom commands from Misc/commands.tex
+\input{misc/acronyms.tex} % Load thesis acronyms
+
+% Uncomment this command to make all links black:
+%   useful for printing on black-white printers that do a
+%   poor job at rasterizing colored text properly
+%\hypersetup{colorlinks=false}
+
+\addbibresource{literature.bib} % The filename of the bibliography
+%----------------------------------------------------------------------------------------
+%	THESIS INFORMATION  --  EDIT EVERYTHING IN THIS BLOCK
+%----------------------------------------------------------------------------------------
+\newcommand{\thesistype}{Master} % Bachelor, Master, Doctoral ...
+\newcommand{\studentid}{000000}
+
+% Printed on the title page and in the abstract; \ttitle prints it elsewhere.
+\thesistitle{Official Thesis Title}
+% Same title for the title page, where \mbox keeps a phrase from breaking across lines.
+\newcommand{\thesistitledisplay}{Official Thesis Title}
+
+% Title-page date, updated on every compile (format defined in misc/setup.tex).
+\def\tdate{\monthyeardate\today}
+
+\author{Your Full Name}
+\supervisor{Your Supervisor}
+\examiner{First Examiner}
+\newcommand{\secondexaminer}{Second Examiner}
+
+\university{\href{https://www.tu.berlin/en/}{Technische Universit\"at Berlin}}
+\group{\href{https://mlsec.org/}{Chair of Machine Learning and Security}}
+\department{\href{https://www.tu.berlin/en/eecs}{Faculty IV -- Electrical Engineering and Computer Science}}
+\faculty{\href{https://www.tu.berlin/en/eecs}{Faculty IV -- Electrical Engineering and Computer Science}}
+
+\addresses{address not used}
+\subject{your subject area}
+\keywords{keyword one, keyword two, keyword three}
+%----------------------------------------------------------------------------------------
+%	END OF THESIS INFORMATION
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	DRAFT SCOPE (build speed)
+%----------------------------------------------------------------------------------------
+% A full build typesets every chapter. While working on one chapter,
+% \includeonly restricts typesetting to that file: LaTeX still reads every other
+% chapter's .aux, so page numbers, cross-references and citations resolve, but
+% only the listed file is re-typeset. draftscope.tex holds that \includeonly line,
+% is gitignored, and is written by scripts/scope.sh:
+%
+%   ./scripts/scope.sh chapters/methodology.tex   # limit to one chapter
+%   ./scripts/scope.sh --all                      # back to a full build
+%
+% Needs one full build first, so that every chapter has an .aux file.
+\InputIfFileExists{draftscope.tex}{}{}
+
+\begin{document}
+
+\selectlanguage{american}
+
+\frenchspacing % do not add additional hspace after end of sentence full stop dot.
+
+\frontmatter % Uses roman page numbering style (i, ii, iii, iv...) for the pre-content pages
+
+\hypersetup{urlcolor=black}
+
+\include{misc/titlepage} % Typeset the titlepage
+
+\hypersetup{urlcolor=ubblue80}
+
+%----------------------------------------------------------------------------------------
+%	DECLARATION PAGE (first page after the title, as the examination office requires)
+%----------------------------------------------------------------------------------------
+% Wording = TU Berlin "Declaration of authorship" (IB, updated April 2025), verbatim, placed
+%   directly after the title page as item 8 of the submission rules requires ("first page of the
+%   thesis"), plus one sentence pointing to sec:method-ai-use where product, manufacturer,
+%   version and purposes of the generative AI tools are named. Moved from the document end and
+%   switched from the German template to the English one 2026-09-05.
+
+% Title overridden for this page only: the German template heads the declaration
+%   "Eigenst\"andigkeitserkl\"arung" (the class default would print "Eidesstattliche Erkl\"arung"
+%   under ngerman, which is a different form).
+% The \- pins the only break point to the compound boundary: at \huge the word is wider
+%   than the measure and must break, and "Eigenst\"andigkeits-erkl\"arung" is where German breaks it.
+% The language switch wraps the whole environment, since the environment sets the heading before
+%   its body starts and the heading would otherwise be hyphenated with English patterns. The title
+%   is set AFTER the switch, since babel redefines \authorshipname for ngerman ("Eidesstattliche
+%   Erkl\"arung") and would override an earlier \renewcommand.
+\begin{otherlanguage}{ngerman}
+\renewcommand{\authorshipname}{Eigenst\"andigkeits\-erkl\"arung}
+\begin{declaration}
+\addchaptertocentry{\authorshipname} % Add the declaration to the table of contents
+
+Hiermit versichere ich, dass ich die vorliegende Arbeit ohne Hilfe Dritter und ausschlie\ss{}lich unter Verwendung der aufgef\"uhrten Quellen und Hilfsmittel angefertigt habe.
+Alle Stellen die den benutzten Quellen und Hilfsmitteln w\"ortlich oder inhaltlich entnommen sind, habe ich als solche kenntlich gemacht.
+
+Sofern KI-Tools verwendet wurden, habe ich Produktnamen, Hersteller, die jeweils verwendete Softwareversion und die Art der Nutzung (z.\,B.\ sprachliche \"Uberpr\"ufung und Verbesserung der Texte, systematische Recherche) benannt.
+Diese Angaben stehen in Abschnitt~\ref{sec:method-ai-use}.
+Ich verantworte die Auswahl, die \"Ubernahme und s\"amtliche Ergebnisse des von mir verwendeten KI-generierten Outputs vollumf\"anglich selbst.
+
+Die Satzung zur Sicherung guter wissenschaftlicher Praxis an der TU Berlin vom 8.~M\"arz 2017.\\
+% The address is 604 pt wide against a 326 pt line, so it cannot sit on one line at a readable
+%   size. The break is forced after the K3-AMBl/ directory so the gazette file name stays whole;
+%   both halves link to the full address (2026-09-08).
+\newcommand{\grpurl}{https://www.static.tu.berlin/fileadmin/www/10002457/K3-AMBl/Amtsblatt_2023/Amtliches_Mitteilungsblatt_Nr._16_vom_30.05.2023.pdf}%
+\href{\grpurl}{\nolinkurl{https://www.static.tu.berlin/fileadmin/www/10002457/K3-AMBl/}}\\
+\href{\grpurl}{\nolinkurl{Amtsblatt_2023/Amtliches_Mitteilungsblatt_Nr._16_vom_30.05.2023.pdf}}\\
+habe ich zur Kenntnis genommen.
+
+Ich erkl\"are weiterhin, dass ich die Arbeit in gleicher oder \"ahnlicher Form noch keiner anderen Pr\"ufungsbeh\"orde vorgelegt habe.
+
+\bigskip
+\bigskip
+\bigskip
+
+% Date = compile date via datetime's \fulldate (misc/setup.tex), so it updates on every build.
+% Signature = figures/signature_cropped.png, cropped to the ink (transparency preserved) from the
+%   author's figures/Signature.png (2026-09-05); the \IfFileExists guard keeps the build working
+%   if the file is missing (it then prints the bare rule). The image is set in a zero-size box
+%   (\raisebox{-1.20cm}[0pt][0pt]) so its lower strokes cross the rule like ink on a signed form;
+%   change -1.20cm to move it up or down. Both tabulars are bottom-aligned so the date sits on the
+%   rule's row.
+\begin{tabular}[b]{@{}l@{}}
+  Berlin, den \volldatum\today\\[3.5ex]
+  ~
+\end{tabular}
+\hspace{\fill}\hspace{1.5em}%
+\begin{tabular}[b]{@{}c@{}}
+  \IfFileExists{figures/signature_cropped.png}{\raisebox{-1.20cm}[0pt][0pt]{\includegraphics[height=1.8cm]{figures/signature_cropped.png}}}{\rule{0pt}{1.8cm}}\\
+  \rule{18em}{0.5pt}\\[3.5ex]
+  \authorname
+\end{tabular}\hspace{\fill}
+
+\end{declaration}
+\end{otherlanguage}
+%----------------------------------------------------------------------------------------
+%	ZUSAMMENFASSUNG (German abstract, required for a thesis written in English)
+%----------------------------------------------------------------------------------------
+% The abstract environment with the heading renamed inside a group and the text set
+%   under ngerman, so German hyphenation applies. Placed BEFORE the English abstract.
+%   The examination office allows one page.
+{\renewcommand{\abstractname}{Zusammenfassung}%
+\begin{otherlanguage}{ngerman}
+\begin{abstract}
+\addchaptertocentry{\abstractname} % lists the German abstract in the contents
+Diese Zusammenfassung ist ein Platzhalter und zeigt, dass deutscher Text mit Umlauten und Silbentrennung funktioniert.
+Sie beschreibt in wenigen S\"atzen das Problem, den Ansatz und das wichtigste Ergebnis der Arbeit.
+Ein \ac{gnn} liest dabei die Struktur der Daten, und ein \ac{llm} erzeugt die Merkmale der Knoten.
+Die Kennzahlen stehen im deutschen Format, etwa ein Makro-F1 von 0,909 gegen\"uber 0,501 im Vergleichsfall.
+Der letzte Satz nennt, was die Arbeit zeigt, ohne neue Begriffe einzuf\"uhren.
+\end{abstract}
+\end{otherlanguage}}
+
+%----------------------------------------------------------------------------------------
+%	ABSTRACT
+%----------------------------------------------------------------------------------------
+
+\begin{abstract}
+\addchaptertocentry{\abstractname} % lists the abstract in the contents
+This abstract is a placeholder, written as one sentence per line so that a diff stays readable.
+It states the problem, the approach, and the result, and it repeats no sentence of the introduction verbatim.
+A \ac{gnn} reads the structure of the data, and an \ac{llm} produces the node features.
+Numbers appear as they do in the chapters, a macro F1 of 0.909 against 0.501 for the baseline.
+The closing sentence says what the thesis shows.
+\end{abstract}
+
+\cleardoublepage
+
+% Table of Contents uses a wider layout than the main content
+\newgeometry{
+		head=13.6pt,
+		top=27.4mm,
+		bottom=27.4mm,
+		inner=24.8mm,
+		outer=24.8mm,
+		marginparsep=0mm,
+		marginparwidth=0mm,
+}
+{
+\hypersetup{linkcolor=black}
+\tableofcontents % Prints the ToC entries
+}
+\restoregeometry
+
+%----------------------------------------------------------------------------------------
+%	LIST OF FIGURES AND LIST OF TABLES
+%----------------------------------------------------------------------------------------
+% Added 2026-09-05 (user decision). Same wide layout as the ToC; entries use the short
+%   bracketed caption titles (every \caption carries one since 2026-09-05). The class option
+%   liststotoc adds both lists to the table of contents.
+
+\cleardoublepage
+\newgeometry{
+		head=13.6pt,
+		top=27.4mm,
+		bottom=27.4mm,
+		inner=24.8mm,
+		outer=24.8mm,
+		marginparsep=0mm,
+		marginparwidth=0mm,
+}
+{
+\hypersetup{linkcolor=black}
+\listoffigures
+\cleardoublepage
+\listoftables
+}
+\restoregeometry
+
+%----------------------------------------------------------------------------------------
+%	LIST OF ACRONYMS
+%----------------------------------------------------------------------------------------
+
+\cleardoublepage
+\printacronyms[name={List of Acronyms}]
+
+%----------------------------------------------------------------------------------------
+%	DEDICATION
+%----------------------------------------------------------------------------------------
+
+% \dedicatory{For/Dedicated to/To my\ldots}
+
+
+%----------------------------------------------------------------------------------------
+%	THESIS CONTENT - CHAPTERS
+%----------------------------------------------------------------------------------------
+\mainmatter % From here on, numeric (1,2,3...) page numbering
+\pagestyle{thesis} % Return the page headers back to the "thesis" style
+
+% Define some commands to keep the formatting separated from the content
+\newcommand{\keyword}[1]{\textbf{#1}}
+\newcommand{\tabhead}[1]{\textbf{#1}}
+\newcommand{\code}[1]{\texttt{#1}}
+\newcommand{\file}[1]{\texttt{#1}}
+\newcommand{\option}[1]{\texttt{\itshape#1}}
+
+% Figures will automatically be searched for in the Figures subdirectory
+\graphicspath{{./figures/}}
+
+% Chapters are \include'd, not \input, so each gets its own .aux file and can be
+% compiled alone via \includeonly (scripts/scope.sh). Give the path without .tex.
+% \include forces a \clearpage, so an \include'd file always starts a new page.
+\include{chapters/introduction}
+\include{chapters/background}
+\include{chapters/dataset}
+\include{chapters/methodology}
+% The experiments chapter is split across chapters/experiments/, one file per
+% experiment, so a long chapter stays navigable and each section keeps its own .aux
+% for scripts/scope.sh. The chapter opening \input's the FIRST section, because
+% \include would force a page break and leave the opening alone on its own page.
+% Every later section is \include'd here.
+\include{chapters/experiments}
+\include{chapters/experiments/experiment2-ablation}
+% The limitations are a section of the discussion, \input from inside
+% chapters/discussion.tex, so they are not listed here.
+\include{chapters/discussion}
+\include{chapters/conclusion}
+
+%----------------------------------------------------------------------------------------
+%	BIBLIOGRAPHY
+%----------------------------------------------------------------------------------------
+
+% Bibliography has no wide margins:
+\newgeometry{
+	inner=2cm, % Inner margin
+	outer=2cm, % Outer margin
+	marginparwidth=0cm,
+	marginparsep=0mm,
+	bindingoffset=.5cm, % Binding offset
+	top=1.5cm, % Top margin
+	bottom=2.5cm, % Bottom margin,
+	includehead,
+	includefoot
+	% showframe, % Uncomment to show how the type block is set on the page
+}
+
+\addchap{References}
+
+% enables two-column layout for bibliography
+\setlength\columnsep{2em}
+\begin{multicols}{2}
+	\begin{refcontext}[sorting=nyt] % sort bibliography by last name, year, title
+		\renewcommand*{\bibfont}{\small\RaggedRight}
+		\linespread{1.0}\selectfont % increase linespread if desired (not recommended)
+		\printbibliography[heading=none]
+	\end{refcontext}
+\end{multicols}
+
+
+% The "Appendix" ToC label is set by \addtocontents at the TOP of
+% appendices/appendixA.tex — placed there because a write issued between two
+% \include's migrates into the next include's .aux and would land in the .toc
+% AFTER Appendix A's entry (rendering it as "chapter A").
+
+\appendix % Cue to tell LaTeX that the following "chapters" are Appendices
+% The appendices carry no margin figures, tables, or sidenotes, but they carry code listings and
+% wide tables, so the margin column is folded into the text block from here on: 115 + 8.2 + 41.4 =
+% 164.6 mm. Paper, head, top, bottom, and inner margin stay as in misc/setup.tex, so the running
+% header (built from text width + margin at load time) still spans the block (2026-09-12).
+\cleardoublepage
+\newgeometry{paper=a4paper, head=13.6pt, top=27.4mm, bottom=27.4mm, inner=24.8mm,
+             textwidth=164.6mm, marginparwidth=0mm, marginparsep=0mm}
+\crefalias{chapter}{appendix}
+\crefalias{section}{appendix}    % labels placed after \appendix print "Appendix D.1", not "Section D.1" (2026-09-11)
+\crefalias{subsection}{appendix} % cleveref: print "Appendix E", not "Chapter E", for labels after this point
+
+% Ensure proper section numbering in appendix, e.g., A.1, A.2, B.1, …
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+
+\include{appendices/appendixA}
+\include{appendices/appendixB}
+
+
+\end{document}
