@@ -17,9 +17,11 @@ make quick      # one pass while writing
 running LaTeX. It is a snapshot, not a build artifact: `main.pdf` stays untracked,
 so your own builds never show up as changes.
 
-The title page carries an attribution line in white on white. It does not show on
-the page, but copy and paste, screen readers and text extraction return it, so
-delete the block in `misc/titlepage.tex` if you do not want it in your submission.
+Two marks name the template, both defined under TEMPLATE ATTRIBUTION in
+`misc/setup.tex`. The PDF's creator field carries a "made with" note, which is
+metadata and never part of your text. The title page carries a line in white on
+white, which prints nothing but is returned by copy and paste, screen readers and
+text extraction. Remove either one there if you do not want it in your submission.
 
 The build needs LuaLaTeX and Biber; it does not compile with pdfLaTeX, because
 the fonts are loaded through `fontspec`.

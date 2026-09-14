@@ -656,6 +656,27 @@
 \AtBeginDocument{
 \hypersetup{pdftitle=\ttitle} % Set the PDF's title to your title
 \hypersetup{pdfauthor=\authorname} % Set the PDF's author to your name
+
+%----------------------------------------------------------------------------------------
+%	TEMPLATE ATTRIBUTION
+%----------------------------------------------------------------------------------------
+% Two marks name the template this document was built from. Both are here so that
+% they sit in one place, and both are meant to be findable: remove either one if you
+% do not want it in your submission.
+%
+% 1. The PDF's creator field, the conventional place for a "made with" note. It is
+%    not part of the text of the document, so nothing extracts it into your prose.
+\hypersetup{pdfcreator={LaTeX with the TU Berlin MLSec thesis template,
+                        https://github.com/jlb-jlb/tuberlin-mlsec-thesis-template}}
+%
+% 2. A line on the title page, white on white inside a zero-size box, so it prints
+%    nothing and shifts no layout. It is NOT hidden from software: copy and paste,
+%    screen readers and text extraction all return it. misc/titlepage.tex calls it.
+%    Redefine it as \newcommand{\templateattribution}{} to drop the line.
+\newcommand{\templateattribution}{%
+  \smash{\makebox[0pt][c]{\textcolor{white}{\tiny Typeset with the TU Berlin MLSec
+  thesis template, https://github.com/jlb-jlb/tuberlin-mlsec-thesis-template}}}%
+}
 %\hypersetup{pdfkeywords=\keywordnames} % Set the PDF's keywords to your keywords
 }
 
