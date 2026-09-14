@@ -1,5 +1,11 @@
 # TU Berlin MLSec thesis template
 
+<p align="left">
+  <img src="docs/tu-berlin-logo.png" alt="Technische Universität Berlin" height="46">
+  &nbsp;&nbsp;&nbsp;
+  <img src="docs/mlsec-logo.png" alt="Chair of Machine Learning and Security" height="46">
+</p>
+
 A working LaTeX thesis for the Chair of Machine Learning and Security at TU
 Berlin. Every chapter is filled with placeholder text that exercises one part of
 the layout, so the build shows what the template can do before you write a word.
@@ -128,4 +134,6 @@ stay correct. Run one full build first, so that each chapter has an `.aux` file.
 
 The template and this text are CC BY-SA 4.0, following the PSI thesis template
 it derives from. `PSIThesis.cls` is LPPL v1.3c. The bundled fonts carry their own
-licences in `fonts/`.
+licences in `fonts/`. The two logos are marks of TU Berlin and its Chair of
+Machine Learning and Security, used here to identify them, and the licence above
+does not extend to them.
