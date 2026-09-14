@@ -27,11 +27,6 @@ make quick      # one pass while writing
 running LaTeX. It is a snapshot, not a build artifact: `main.pdf` stays untracked,
 so your own builds never show up as changes.
 
-Two marks name the template, both defined under TEMPLATE ATTRIBUTION in
-`misc/setup.tex`. The verso of the title page carries a line in
-white on white, so that page still prints blank, and copy and paste, screen readers
-and text extraction return it. Remove either one there if you do not want it in
-your submission.
 
 The build needs LuaLaTeX and Biber; it does not compile with pdfLaTeX, because
 the fonts are loaded through `fontspec`.
