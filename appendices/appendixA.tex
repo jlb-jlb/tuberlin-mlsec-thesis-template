@@ -1,8 +1,8 @@
-% The "Appendix" label in the table of contents is written here, at the top of the
-% FIRST appendix. A write issued between two \include's migrates into the next
-% include's .aux and would land in the .toc after Appendix A's entry.
-\addtocontents{toc}{\protect\vspace{1em}}
-\addtocontents{toc}{\noindent\textbf{Appendix}\protect\vspace{0.5em}}
+% Label the appendix chapters "Appendix" in the table of contents, by redefining
+% \chaptername inside the .toc from this point on. The line must live INSIDE the
+% first included appendix: a write issued between two \include's migrates into the
+% next include's .aux and would land in the .toc after this chapter's own entry.
+\addtocontents{toc}{\string\def\string\chaptername{Appendix}}
 
 \chapter{Reproducibility}
 \label{app:first}
