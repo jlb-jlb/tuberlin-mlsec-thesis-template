@@ -24,8 +24,7 @@ running LaTeX. It is a snapshot, not a build artifact: `main.pdf` stays untracke
 so your own builds never show up as changes.
 
 Two marks name the template, both defined under TEMPLATE ATTRIBUTION in
-`misc/setup.tex`. The PDF's creator field carries a "made with" note, which is
-metadata and never part of your text. The verso of the title page carries a line in
+`misc/setup.tex`. The verso of the title page carries a line in
 white on white, so that page still prints blank, and copy and paste, screen readers
 and text extraction return it. Remove either one there if you do not want it in
 your submission.
