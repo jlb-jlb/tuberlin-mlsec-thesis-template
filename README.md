@@ -13,6 +13,14 @@ make            # lualatex, biber, two more passes
 make quick      # one pass while writing
 ```
 
+`example.pdf` is this template built once, so you can see the result without
+running LaTeX. It is a snapshot, not a build artifact: `main.pdf` stays untracked,
+so your own builds never show up as changes.
+
+The title page carries an attribution line in white on white. It does not show on
+the page, but copy and paste, screen readers and text extraction return it, so
+delete the block in `misc/titlepage.tex` if you do not want it in your submission.
+
 The build needs LuaLaTeX and Biber; it does not compile with pdfLaTeX, because
 the fonts are loaded through `fontspec`.
 
